@@ -13,7 +13,7 @@ const handleSubmit = () => {
 </script>
 
 <template>
-	<v-sheet width="400px">
+	<v-sheet width="400px" class="mx-auto">
 		<v-form @submit.prevent="handleSubmit">
 			<v-container>
 				<v-col>
