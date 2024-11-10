@@ -2,8 +2,6 @@
 import { reactive } from 'vue';
 
 const user = reactive({
-	lastName: '',
-	firstName: '',
 	email: '',
 	password: ''
 });
@@ -18,25 +16,8 @@ const handleSubmit = () => {
 			<v-container>
 				<v-col>
 					<v-row justify="center">
-						<h3 class="text-h3">Регистрация</h3>
+						<h3 class="text-h3">Вход</h3>
 					</v-row>
-
-					<v-row>
-						<v-text-field
-							v-model="user.firstName"
-							label="First name"
-							required
-						></v-text-field>
-					</v-row>
-
-					<v-row>
-						<v-text-field
-							v-model="user.lastName"
-							label="Last name"
-							required
-						></v-text-field>
-					</v-row>
-
 					<v-row>
 						<v-text-field
 							v-model="user.email"
@@ -55,14 +36,14 @@ const handleSubmit = () => {
 
 					<v-row justify="center">
 						<v-btn type="submit">
-							Зарегистрироваться
+							Авторизоваться
 						</v-btn>
 					</v-row>
 
 					<v-row justify="center">
 					<span class="text-subtitle-1">
-						Уже есть аккаунт?
-					<router-link to="/login">Авторизоваться</router-link>
+						Уже нет аккаунта?
+					<router-link to="/registration">Зарегистрироваться</router-link>
 					</span>
 					</v-row>
 				</v-col>
