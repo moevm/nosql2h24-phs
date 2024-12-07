@@ -1,12 +1,22 @@
 <script setup>
 import { reactive } from 'vue';
+import { login } from '../../api/index.js';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 const user = reactive({
 	email: '',
 	password: ''
 });
 
-const handleSubmit = () => {
+const handleSubmit = async () => {
+	try {
+		await login({ email: user.email, password: user.password });
+		router.push('/consultant');
+	} catch (e) {
+		console.log(e);
+	}
 };
 </script>
 
@@ -30,6 +40,7 @@ const handleSubmit = () => {
 						<v-text-field
 							v-model="user.password"
 							label="Password"
+							type="password"
 							required
 						></v-text-field>
 					</v-row>

@@ -1,5 +1,9 @@
 <script setup>
 import { reactive } from 'vue';
+import { register } from '../../api/index.js';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 const user = reactive({
 	lastName: '',
@@ -8,7 +12,13 @@ const user = reactive({
 	password: ''
 });
 
-const handleSubmit = () => {
+const handleSubmit = async () => {
+	try {
+		await register({ email: user.email, password: user.password, lastName: user.lastName, firstName: user.firstName });
+		router.push('/consultant');
+	} catch (e) {
+		console.log(e);
+	}
 };
 </script>
 
