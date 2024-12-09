@@ -25,7 +25,7 @@ const fetchConsultants = async () => {
 	try {
 		const { data } = await getPsychologists({
 			search: filterState.search,
-			meetingFormat: filterState.meetingFormat,
+			meeting_format: filterState.meetingFormat,
 			email: filterState.email,
 			price: filterState.price,
 			language: filterState.language
