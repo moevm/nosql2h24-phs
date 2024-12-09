@@ -1,4 +1,6 @@
 from datetime import datetime
+
+from bson import ObjectId
 from fastapi import HTTPException
 from fastapi import Query
 from typing import Optional, List
@@ -6,8 +8,6 @@ from typing import Optional, List
 from fastapi import APIRouter
 import motor.motor_asyncio
 from pydantic import BaseModel, EmailStr
-
-from server.models.models import PyObjectId
 
 MONGO_DETAILS = "mongodb://localhost:27017"
 
@@ -40,6 +40,7 @@ class UserResponse(BaseModel):
 
 
 class PsychologistResponse(BaseModel):
+    id: str
     name: str
     surname: str
     email: EmailStr
@@ -115,3 +116,26 @@ async def search_psychologists(
         )
         for psychologist in psychologists
     ]
+
+@router.get("/psychologists/{psychologist_id}", response_model=PsychologistResponse)
+async def get_psychologist(psychologist_id: str):
+    try:
+        if not ObjectId.is_valid(psychologist_id):
+            raise HTTPException(status_code=400, detail="Invalid psychologist ID")
+
+        psychologist = await psychologists_collection.find_one({"_id": ObjectId(psychologist_id)})
+        if not psychologist:
+            raise HTTPException(status_code=404, detail="Psychologist not found")
+
+        return PsychologistResponse(
+            id=str(psychologist["_id"]),
+            name=psychologist["user"]["name"],
+            surname=psychologist["user"]["surname"],
+            email=psychologist["user"]["mail"],
+            price=psychologist.get("price"),
+            address=psychologist.get("address"),
+            meeting_format=psychologist.get("meeting_format"),
+            language=psychologist.get("language"),
+        )
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
