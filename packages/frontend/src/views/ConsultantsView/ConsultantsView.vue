@@ -1,20 +1,51 @@
 <script setup>
-import { onMounted, ref, watch } from 'vue';
+import { onMounted, reactive, ref, watch } from 'vue';
 import { getPsychologists } from '../../api/index.js';
 
-const search = ref('');
+const headers = [
+	{ title: 'Name', key: 'name' },
+	{ title: 'Surname', key: 'surname' },
+	{ title: 'Email', key: 'email' },
+	{ title: 'Price', key: 'price' },
+	{ title: 'Address', key: 'address' },
+	{ title: 'Meeting_format', key: 'meeting_format' },
+	{ title: 'Language', key: 'language' },
+];
+
+const filterState = reactive({
+	search: '',
+	meetingFormat: '',
+	email: '',
+	price: '',
+	language: ''
+});
 const consultants = ref([]);
 
 const fetchConsultants = async () => {
 	try {
-		const { data } = await getPsychologists(search.value);
+		const { data } = await getPsychologists({
+			search: filterState.search,
+			meetingFormat: filterState.meetingFormat,
+			email: filterState.email,
+			price: filterState.price,
+			language: filterState.language
+		});
 		consultants.value = data;
 	} catch (e) {
 		console.log(e);
 	}
 };
 
-watch([search], fetchConsultants);
+const resetFilterState = () => {
+	filterState.meetingFormat = '';
+	filterState.search = '';
+	filterState.meetingFormat = '';
+	filterState.email = '';
+	filterState.price = '';
+	filterState.language = '';
+};
+
+watch([filterState], fetchConsultants, { deep: true });
 
 onMounted(fetchConsultants);
 </script>
@@ -23,21 +54,41 @@ onMounted(fetchConsultants);
 	<v-container>
 		<v-col>
 			<v-row>
-				<v-text-field v-model="search" label="Search"/>
+				<v-text-field v-model="filterState.search" label="Search"/>
+			</v-row>
+			<v-row>
+				<v-text-field v-model="filterState.price" label="Price"/>
+			</v-row>
+			<v-row>
+				<v-text-field v-model="filterState.email" label="Email"/>
+			</v-row>
+			<v-row>
+				<v-select
+					v-model="filterState.meetingFormat"
+					label="Meeting format"
+					:items="['online', 'offline']"
+				></v-select>
+			</v-row>
+			<v-row>
+				<v-select
+					v-model="filterState.language"
+					label="Language"
+					:items="['English', 'Russian']"
+				></v-select>
+			</v-row>
+			<v-row>
+				<v-btn text="Сбросить" @click="resetFilterState"></v-btn>
 			</v-row>
 
 
 			<v-row v-if="consultants.length">
-				<v-virtual-scroll
-					:height="300"
-					:items="consultants"
-				>
-					<template v-slot:default="{ item }">
-						<v-card :title="item.name"></v-card>
-
-						<br/>
+				<v-data-table :headers="headers" :items="consultants">
+					<template v-slot:item.name="{ value, item }">
+						<router-link :to="`/consultant/${item.id}`">
+							{{ value }}
+						</router-link>
 					</template>
-				</v-virtual-scroll>
+				</v-data-table>
 			</v-row>
 		</v-col>
 	</v-container>
