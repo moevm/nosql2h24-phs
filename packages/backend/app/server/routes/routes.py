@@ -91,21 +91,41 @@ async def login_user(credentials: LoginRequest):
 
 @router.get("/psychologists", response_model=List[PsychologistResponse])
 async def search_psychologists(
-        search: Optional[str] = Query(None)
+        search: Optional[str] = Query(None),
+        email: Optional[str] = Query(None),
+        price: Optional[float] = Query(None),
+        address: Optional[str] = Query(None),
+        meeting_format: Optional[str] = Query(None),
+        language: Optional[str] = Query(None),
 ):
     query = {}
+
     if search:
-        query = {
-            "$or": [
-                {"user.name": {"$regex": search, "$options": "i"}},
-                {"user.surname": {"$regex": search, "$options": "i"}},
-            ]
-        }
+        query["$or"] = [
+            {"user.name": {"$regex": search, "$options": "i"}},
+            {"user.surname": {"$regex": search, "$options": "i"}},
+        ]
+
+    if email:
+        query["user.mail"] = {"$regex": email, "$options": "i"}
+
+    if price is not None:
+        query["price"] = price
+
+    if address:
+        query["address"] = {"$regex": address, "$options": "i"}
+
+    if meeting_format:
+        query["meeting_format"] = {"$regex": meeting_format, "$options": "i"}
+
+    if language:
+        query["language"] = {"$regex": language, "$options": "i"}
 
     psychologists = await psychologists_collection.find(query).to_list(length=50)
 
     return [
         PsychologistResponse(
+            id=str(psychologist["_id"]),
             name=psychologist["user"]["name"],
             surname=psychologist["user"]["surname"],
             email=psychologist["user"]["mail"],
