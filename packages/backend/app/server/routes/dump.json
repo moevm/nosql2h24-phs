@@ -1,0 +1,612 @@
+{
+    "psychologists": [
+        {
+            "_id": {
+                "$oid": "675430feff1a2f487fa1734a"
+            },
+            "user": {
+                "id": {
+                    "$oid": "675430feff1a2f487fa17349"
+                },
+                "mail": "psychologist1@example.com",
+                "password": "password123",
+                "name": "PsychologistName1",
+                "surname": "PsychologistSurname1",
+                "sex": null,
+                "birth_date": null,
+                "phone_number": null,
+                "balance": 0.0,
+                "meetings": [],
+                "reviews": []
+            },
+            "price": 50.0,
+            "address": "Address 1",
+            "meeting_format": "online",
+            "education": [
+                {
+                    "institution": "Institution 1",
+                    "degree": "PhD in Psychology",
+                    "year_graduated": {
+                        "$date": "2000-01-01T00:00:00Z"
+                    }
+                }
+            ],
+            "work_experience": [
+                {
+                    "position": "Psychologist",
+                    "place": "Place 1",
+                    "years": [
+                        {
+                            "$date": "2010-01-01T00:00:00Z"
+                        },
+                        {
+                            "$date": "2015-01-01T00:00:00Z"
+                        }
+                    ]
+                }
+            ],
+            "language": "English",
+            "articles": []
+        },
+        {
+            "_id": {
+                "$oid": "675430feff1a2f487fa1734b"
+            },
+            "user": {
+                "id": {
+                    "$oid": "675430feff1a2f487fa17349"
+                },
+                "mail": "psychologist2@example.com",
+                "password": "password123",
+                "name": "PsychologistName2",
+                "surname": "PsychologistSurname2",
+                "sex": null,
+                "birth_date": null,
+                "phone_number": null,
+                "balance": 0.0,
+                "meetings": [],
+                "reviews": []
+            },
+            "price": 51.0,
+            "address": "Address 2",
+            "meeting_format": "online",
+            "education": [
+                {
+                    "institution": "Institution 2",
+                    "degree": "PhD in Psychology",
+                    "year_graduated": {
+                        "$date": "2001-01-01T00:00:00Z"
+                    }
+                }
+            ],
+            "work_experience": [
+                {
+                    "position": "Psychologist",
+                    "place": "Place 2",
+                    "years": [
+                        {
+                            "$date": "2010-01-01T00:00:00Z"
+                        },
+                        {
+                            "$date": "2016-01-01T00:00:00Z"
+                        }
+                    ]
+                }
+            ],
+            "language": "English",
+            "articles": []
+        },
+        {
+            "_id": {
+                "$oid": "675430feff1a2f487fa1734c"
+            },
+            "user": {
+                "id": {
+                    "$oid": "675430feff1a2f487fa17349"
+                },
+                "mail": "psychologist3@example.com",
+                "password": "password123",
+                "name": "PsychologistName3",
+                "surname": "PsychologistSurname3",
+                "sex": null,
+                "birth_date": null,
+                "phone_number": null,
+                "balance": 0.0,
+                "meetings": [],
+                "reviews": []
+            },
+            "price": 52.0,
+            "address": "Address 3",
+            "meeting_format": "online",
+            "education": [
+                {
+                    "institution": "Institution 3",
+                    "degree": "PhD in Psychology",
+                    "year_graduated": {
+                        "$date": "2002-01-01T00:00:00Z"
+                    }
+                }
+            ],
+            "work_experience": [
+                {
+                    "position": "Psychologist",
+                    "place": "Place 3",
+                    "years": [
+                        {
+                            "$date": "2010-01-01T00:00:00Z"
+                        },
+                        {
+                            "$date": "2017-01-01T00:00:00Z"
+                        }
+                    ]
+                }
+            ],
+            "language": "English",
+            "articles": []
+        },
+        {
+            "_id": {
+                "$oid": "675430feff1a2f487fa1734d"
+            },
+            "user": {
+                "id": {
+                    "$oid": "675430feff1a2f487fa17349"
+                },
+                "mail": "psychologist4@example.com",
+                "password": "password123",
+                "name": "PsychologistName4",
+                "surname": "PsychologistSurname4",
+                "sex": null,
+                "birth_date": null,
+                "phone_number": null,
+                "balance": 0.0,
+                "meetings": [],
+                "reviews": []
+            },
+            "price": 53.0,
+            "address": "Address 4",
+            "meeting_format": "online",
+            "education": [
+                {
+                    "institution": "Institution 4",
+                    "degree": "PhD in Psychology",
+                    "year_graduated": {
+                        "$date": "2003-01-01T00:00:00Z"
+                    }
+                }
+            ],
+            "work_experience": [
+                {
+                    "position": "Psychologist",
+                    "place": "Place 4",
+                    "years": [
+                        {
+                            "$date": "2010-01-01T00:00:00Z"
+                        },
+                        {
+                            "$date": "2018-01-01T00:00:00Z"
+                        }
+                    ]
+                }
+            ],
+            "language": "English",
+            "articles": []
+        },
+        {
+            "_id": {
+                "$oid": "675430feff1a2f487fa1734e"
+            },
+            "user": {
+                "id": {
+                    "$oid": "675430feff1a2f487fa17349"
+                },
+                "mail": "psychologist5@example.com",
+                "password": "password123",
+                "name": "PsychologistName5",
+                "surname": "PsychologistSurname5",
+                "sex": null,
+                "birth_date": null,
+                "phone_number": null,
+                "balance": 0.0,
+                "meetings": [],
+                "reviews": []
+            },
+            "price": 54.0,
+            "address": "Address 5",
+            "meeting_format": "online",
+            "education": [
+                {
+                    "institution": "Institution 5",
+                    "degree": "PhD in Psychology",
+                    "year_graduated": {
+                        "$date": "2004-01-01T00:00:00Z"
+                    }
+                }
+            ],
+            "work_experience": [
+                {
+                    "position": "Psychologist",
+                    "place": "Place 5",
+                    "years": [
+                        {
+                            "$date": "2010-01-01T00:00:00Z"
+                        },
+                        {
+                            "$date": "2019-01-01T00:00:00Z"
+                        }
+                    ]
+                }
+            ],
+            "language": "English",
+            "articles": []
+        },
+        {
+            "_id": {
+                "$oid": "675430feff1a2f487fa1734f"
+            },
+            "user": {
+                "id": {
+                    "$oid": "675430feff1a2f487fa17349"
+                },
+                "mail": "psychologist6@example.com",
+                "password": "password123",
+                "name": "PsychologistName6",
+                "surname": "PsychologistSurname6",
+                "sex": null,
+                "birth_date": null,
+                "phone_number": null,
+                "balance": 0.0,
+                "meetings": [],
+                "reviews": []
+            },
+            "price": 55.0,
+            "address": "Address 6",
+            "meeting_format": "online",
+            "education": [
+                {
+                    "institution": "Institution 6",
+                    "degree": "PhD in Psychology",
+                    "year_graduated": {
+                        "$date": "2005-01-01T00:00:00Z"
+                    }
+                }
+            ],
+            "work_experience": [
+                {
+                    "position": "Psychologist",
+                    "place": "Place 6",
+                    "years": [
+                        {
+                            "$date": "2010-01-01T00:00:00Z"
+                        },
+                        {
+                            "$date": "2020-01-01T00:00:00Z"
+                        }
+                    ]
+                }
+            ],
+            "language": "English",
+            "articles": []
+        },
+        {
+            "_id": {
+                "$oid": "675430feff1a2f487fa17350"
+            },
+            "user": {
+                "id": {
+                    "$oid": "675430feff1a2f487fa17349"
+                },
+                "mail": "psychologist7@example.com",
+                "password": "password123",
+                "name": "PsychologistName7",
+                "surname": "PsychologistSurname7",
+                "sex": null,
+                "birth_date": null,
+                "phone_number": null,
+                "balance": 0.0,
+                "meetings": [],
+                "reviews": []
+            },
+            "price": 56.0,
+            "address": "Address 7",
+            "meeting_format": "online",
+            "education": [
+                {
+                    "institution": "Institution 7",
+                    "degree": "PhD in Psychology",
+                    "year_graduated": {
+                        "$date": "2006-01-01T00:00:00Z"
+                    }
+                }
+            ],
+            "work_experience": [
+                {
+                    "position": "Psychologist",
+                    "place": "Place 7",
+                    "years": [
+                        {
+                            "$date": "2010-01-01T00:00:00Z"
+                        },
+                        {
+                            "$date": "2021-01-01T00:00:00Z"
+                        }
+                    ]
+                }
+            ],
+            "language": "English",
+            "articles": []
+        },
+        {
+            "_id": {
+                "$oid": "675430feff1a2f487fa17351"
+            },
+            "user": {
+                "id": {
+                    "$oid": "675430feff1a2f487fa17349"
+                },
+                "mail": "psychologist8@example.com",
+                "password": "password123",
+                "name": "PsychologistName8",
+                "surname": "PsychologistSurname8",
+                "sex": null,
+                "birth_date": null,
+                "phone_number": null,
+                "balance": 0.0,
+                "meetings": [],
+                "reviews": []
+            },
+            "price": 57.0,
+            "address": "Address 8",
+            "meeting_format": "online",
+            "education": [
+                {
+                    "institution": "Institution 8",
+                    "degree": "PhD in Psychology",
+                    "year_graduated": {
+                        "$date": "2007-01-01T00:00:00Z"
+                    }
+                }
+            ],
+            "work_experience": [
+                {
+                    "position": "Psychologist",
+                    "place": "Place 8",
+                    "years": [
+                        {
+                            "$date": "2010-01-01T00:00:00Z"
+                        },
+                        {
+                            "$date": "2022-01-01T00:00:00Z"
+                        }
+                    ]
+                }
+            ],
+            "language": "English",
+            "articles": []
+        },
+        {
+            "_id": {
+                "$oid": "675430feff1a2f487fa17352"
+            },
+            "user": {
+                "id": {
+                    "$oid": "675430feff1a2f487fa17349"
+                },
+                "mail": "psychologist9@example.com",
+                "password": "password123",
+                "name": "PsychologistName9",
+                "surname": "PsychologistSurname9",
+                "sex": null,
+                "birth_date": null,
+                "phone_number": null,
+                "balance": 0.0,
+                "meetings": [],
+                "reviews": []
+            },
+            "price": 58.0,
+            "address": "Address 9",
+            "meeting_format": "online",
+            "education": [
+                {
+                    "institution": "Institution 9",
+                    "degree": "PhD in Psychology",
+                    "year_graduated": {
+                        "$date": "2008-01-01T00:00:00Z"
+                    }
+                }
+            ],
+            "work_experience": [
+                {
+                    "position": "Psychologist",
+                    "place": "Place 9",
+                    "years": [
+                        {
+                            "$date": "2010-01-01T00:00:00Z"
+                        },
+                        {
+                            "$date": "2023-01-01T00:00:00Z"
+                        }
+                    ]
+                }
+            ],
+            "language": "English",
+            "articles": []
+        },
+        {
+            "_id": {
+                "$oid": "675430feff1a2f487fa17353"
+            },
+            "user": {
+                "id": {
+                    "$oid": "675430feff1a2f487fa17349"
+                },
+                "mail": "psychologist10@example.com",
+                "password": "password123",
+                "name": "PsychologistName10",
+                "surname": "PsychologistSurname10",
+                "sex": null,
+                "birth_date": null,
+                "phone_number": null,
+                "balance": 0.0,
+                "meetings": [],
+                "reviews": []
+            },
+            "price": 59.0,
+            "address": "Address 10",
+            "meeting_format": "online",
+            "education": [
+                {
+                    "institution": "Institution 10",
+                    "degree": "PhD in Psychology",
+                    "year_graduated": {
+                        "$date": "2009-01-01T00:00:00Z"
+                    }
+                }
+            ],
+            "work_experience": [
+                {
+                    "position": "Psychologist",
+                    "place": "Place 10",
+                    "years": [
+                        {
+                            "$date": "2010-01-01T00:00:00Z"
+                        },
+                        {
+                            "$date": "2024-01-01T00:00:00Z"
+                        }
+                    ]
+                }
+            ],
+            "language": "English",
+            "articles": []
+        }
+    ],
+    "users": [
+        {
+            "_id": {
+                "$oid": "67542dc1c1751cb220d01f5d"
+            },
+            "mail": "admin@admin.com",
+            "password": "1qwe",
+            "name": "1",
+            "surname": "2",
+            "sex": null,
+            "birth_date": null,
+            "phone_number": null,
+            "meetings": [],
+            "reviews": [],
+            "transactions": [],
+            "registered_at": {
+                "$date": "2024-12-07T11:13:05.435Z"
+            }
+        },
+        {
+            "_id": {
+                "$oid": "67542e6c6c73f72c676c4b07"
+            },
+            "mail": "admin1@admin.com",
+            "password": "1qwe",
+            "name": "1",
+            "surname": "2",
+            "sex": null,
+            "birth_date": null,
+            "phone_number": null,
+            "meetings": [],
+            "reviews": [],
+            "transactions": [],
+            "registered_at": {
+                "$date": "2024-12-07T11:15:56.148Z"
+            }
+        },
+        {
+            "_id": {
+                "$oid": "67542ec8f04ed42de3ef905c"
+            },
+            "mail": "admin12@admin.com",
+            "password": "1qwe",
+            "name": "1",
+            "surname": "2",
+            "sex": null,
+            "birth_date": null,
+            "phone_number": null,
+            "meetings": [],
+            "reviews": [],
+            "transactions": [],
+            "registered_at": {
+                "$date": "2024-12-07T11:17:28.608Z"
+            }
+        },
+        {
+            "_id": {
+                "$oid": "67542eeb1f72f07e462ced17"
+            },
+            "mail": "admin123@admin.com",
+            "password": "1qwe",
+            "name": "1",
+            "surname": "2",
+            "sex": null,
+            "birth_date": null,
+            "phone_number": null,
+            "meetings": [],
+            "reviews": [],
+            "transactions": [],
+            "registered_at": {
+                "$date": "2024-12-07T11:18:03.012Z"
+            }
+        },
+        {
+            "_id": {
+                "$oid": "67542fb507081217b9396ca6"
+            },
+            "mail": "admin1253@admin.com",
+            "password": "1qwe",
+            "name": "1",
+            "surname": "2",
+            "sex": null,
+            "birth_date": null,
+            "phone_number": null,
+            "meetings": [],
+            "reviews": [],
+            "transactions": [],
+            "registered_at": {
+                "$date": "2024-12-07T11:21:25.703Z"
+            }
+        },
+        {
+            "_id": {
+                "$oid": "675430feff1a2f487fa17349"
+            },
+            "mail": "a@a.com",
+            "password": "134",
+            "name": "4",
+            "surname": "42",
+            "sex": null,
+            "birth_date": null,
+            "phone_number": null,
+            "meetings": [],
+            "reviews": [],
+            "transactions": [],
+            "registered_at": {
+                "$date": "2024-12-07T11:26:54.377Z"
+            }
+        },
+        {
+            "_id": {
+                "$oid": "675434f944379bbc9cf0cb61"
+            },
+            "mail": "test@test.com",
+            "password": "test134",
+            "name": "test",
+            "surname": "test",
+            "sex": null,
+            "birth_date": null,
+            "phone_number": null,
+            "meetings": [],
+            "reviews": [],
+            "transactions": [],
+            "registered_at": {
+                "$date": "2024-12-07T11:43:53.505Z"
+            }
+        }
+    ]
+}

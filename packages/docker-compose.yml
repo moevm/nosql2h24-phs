@@ -1,0 +1,39 @@
+version: "3.9"
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: frontend:1.0
+    ports:
+      - "127.0.0.1:3000:3000"
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: backend:1.0
+    ports:
+      - "127.0.0.1:8000:8000"
+    depends_on:
+      - db
+    networks:
+      - network
+
+  db:
+    image: mongo:6.0.6
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - network
+
+
+volumes:
+  mongodb_data:
+
+networks:
+  network:
+    driver: bridge
