@@ -4,7 +4,7 @@ services:
   frontend:
     build:
       context: packages/frontend
-      dockerfile: packages/frontend/Dockerfile
+      dockerfile: Dockerfile
     image: frontend:1.0
     ports:
       - "127.0.0.1:3000:3000"
@@ -14,7 +14,7 @@ services:
   backend:
     build:
       context: packages/backend
-      dockerfile: packages/backend/Dockerfile
+      dockerfile: Dockerfile
     image: backend:1.0
     ports:
       - "127.0.0.1:8000:8000"
