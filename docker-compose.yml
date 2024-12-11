@@ -3,8 +3,8 @@ version: "3.9"
 services:
   frontend:
     build:
-      context: ./frontend
-      dockerfile: Dockerfile
+      context: packages/frontend
+      dockerfile: packages/frontend/Dockerfile
     image: frontend:1.0
     ports:
       - "127.0.0.1:3000:3000"
@@ -13,8 +13,8 @@ services:
 
   backend:
     build:
-      context: ./backend
-      dockerfile: Dockerfile
+      context: packages/backend
+      dockerfile: packages/backend/Dockerfile
     image: backend:1.0
     ports:
       - "127.0.0.1:8000:8000"
