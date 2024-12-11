@@ -28,3 +28,7 @@ export const getPsychologists = (query) => {
 export const getDetailPsychologist = (id) => {
 	return api.get(`/psychologists/${id}`);
 }
+
+export const importData = (form) => {
+	return api.post(`/import`, form);
+}

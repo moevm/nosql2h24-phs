@@ -16,7 +16,8 @@ const filterState = reactive({
 	search: '',
 	meetingFormat: '',
 	email: '',
-	price: '',
+	minPrice: '',
+	maxPrice: '',
 	language: ''
 });
 const consultants = ref([]);
@@ -25,9 +26,10 @@ const fetchConsultants = async () => {
 	try {
 		const { data } = await getPsychologists({
 			search: filterState.search,
+			price_min: filterState.minPrice,
+			price_max: filterState.maxPrice,
 			meeting_format: filterState.meetingFormat,
 			email: filterState.email,
-			price: filterState.price,
 			language: filterState.language
 		});
 		consultants.value = data;
@@ -41,7 +43,8 @@ const resetFilterState = () => {
 	filterState.search = '';
 	filterState.meetingFormat = '';
 	filterState.email = '';
-	filterState.price = '';
+	filterState.minPrice = '';
+	filterState.maxPrice = '';
 	filterState.language = '';
 };
 
@@ -57,7 +60,8 @@ onMounted(fetchConsultants);
 				<v-text-field v-model="filterState.search" label="Search"/>
 			</v-row>
 			<v-row>
-				<v-text-field v-model="filterState.price" label="Price"/>
+				<v-text-field v-model="filterState.minPrice" label="от Price" type="number"/>
+				<v-text-field v-model="filterState.maxPrice" label="до Price" type="number"/>
 			</v-row>
 			<v-row>
 				<v-text-field v-model="filterState.email" label="Email"/>
