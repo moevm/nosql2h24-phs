@@ -7,7 +7,7 @@ const ImportExportView = () => import('../views/ImportExportView.vue');
 export const routes = [
 	{ path: '/registration', component: RegistrationView },
 	{ path: '/login', component: LoginView },
-	{ path: '/consultant', component: ConsultantsView },
+	{ path: '/', component: ConsultantsView },
 	{ path: '/consultant/:id', component: ConsultantDetailView },
 	{ path: '/export-import', component: ImportExportView },
 ];
